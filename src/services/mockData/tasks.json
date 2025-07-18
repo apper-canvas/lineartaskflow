@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "title": "Review quarterly reports",
+    "description": "Analyze Q3 financial performance and prepare executive summary",
+    "categoryId": 1,
+    "priority": "high",
+    "dueDate": "2024-12-28",
+    "completed": false,
+    "createdAt": "2024-12-20T10:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 2,
+    "title": "Team standup meeting",
+    "description": "Weekly sync with development team to discuss progress and blockers",
+    "categoryId": 2,
+    "priority": "medium",
+    "dueDate": "2024-12-23",
+    "completed": false,
+    "createdAt": "2024-12-20T11:30:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 3,
+    "title": "Update project documentation",
+    "description": "Revise API documentation and user guides for v2.0 release",
+    "categoryId": 1,
+    "priority": "medium",
+    "dueDate": "2024-12-25",
+    "completed": false,
+    "createdAt": "2024-12-20T09:15:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 4,
+    "title": "Client presentation prep",
+    "description": "Prepare slides for upcoming client demo and product walkthrough",
+    "categoryId": 2,
+    "priority": "high",
+    "dueDate": "2024-12-24",
+    "completed": false,
+    "createdAt": "2024-12-20T14:20:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 5,
+    "title": "Code review backlog",
+    "description": "Review pending pull requests and provide feedback to team members",
+    "categoryId": 3,
+    "priority": "low",
+    "dueDate": "2024-12-26",
+    "completed": true,
+    "createdAt": "2024-12-19T16:45:00Z",
+    "completedAt": "2024-12-20T15:30:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Grocery shopping",
+    "description": "Pick up weekly groceries and household essentials",
+    "categoryId": 4,
+    "priority": "low",
+    "dueDate": "2024-12-22",
+    "completed": false,
+    "createdAt": "2024-12-20T12:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 7,
+    "title": "Book dentist appointment",
+    "description": "Schedule routine dental cleaning for next month",
+    "categoryId": 4,
+    "priority": "low",
+    "dueDate": null,
+    "completed": false,
+    "createdAt": "2024-12-20T13:45:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 8,
+    "title": "Bug fix: Login timeout",
+    "description": "Investigate and fix the user session timeout issue reported by QA",
+    "categoryId": 3,
+    "priority": "high",
+    "dueDate": "2024-12-23",
+    "completed": false,
+    "createdAt": "2024-12-20T08:30:00Z",
+    "completedAt": null
+  }
+]
