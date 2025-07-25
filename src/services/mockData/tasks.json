@@ -8,7 +8,8 @@
     "dueDate": "2024-12-28",
     "completed": false,
     "createdAt": "2024-12-20T10:00:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Corporate Headquarters, 123 Business Ave, Suite 500"
   },
   {
     "Id": 2,
@@ -19,7 +20,8 @@
     "dueDate": "2024-12-23",
     "completed": false,
     "createdAt": "2024-12-20T11:30:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Tech Center Building, Conference Room 3A, 456 Innovation Blvd"
   },
   {
     "Id": 3,
@@ -30,7 +32,8 @@
     "dueDate": "2024-12-25",
     "completed": false,
     "createdAt": "2024-12-20T09:15:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Development Office, 789 Code Street, Floor 2"
   },
   {
     "Id": 4,
@@ -41,7 +44,8 @@
     "dueDate": "2024-12-24",
     "completed": false,
     "createdAt": "2024-12-20T14:20:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Client Services Office, 321 Partnership Plaza, Meeting Room B"
   },
   {
     "Id": 5,
@@ -52,7 +56,8 @@
     "dueDate": "2024-12-26",
     "completed": true,
     "createdAt": "2024-12-19T16:45:00Z",
-    "completedAt": "2024-12-20T15:30:00Z"
+    "completedAt": "2024-12-20T15:30:00Z",
+    "address": "Remote Work - Home Office, 567 Residential Lane"
   },
   {
     "Id": 6,
@@ -63,7 +68,8 @@
     "dueDate": "2024-12-22",
     "completed": false,
     "createdAt": "2024-12-20T12:00:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Fresh Market Superstore, 890 Shopping Center Dr"
   },
   {
     "Id": 7,
@@ -74,7 +80,8 @@
     "dueDate": null,
     "completed": false,
     "createdAt": "2024-12-20T13:45:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "Smile Dental Care, 432 Health Plaza, Suite 12"
   },
   {
     "Id": 8,
@@ -85,6 +92,7 @@
     "dueDate": "2024-12-23",
     "completed": false,
     "createdAt": "2024-12-20T08:30:00Z",
-    "completedAt": null
+    "completedAt": null,
+    "address": "QA Testing Lab, 654 Quality Assurance Blvd, Room 101"
   }
 ]

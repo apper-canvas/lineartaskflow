@@ -15,12 +15,13 @@ const TaskForm = ({
   categories = [],
   className 
 }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     title: initialData?.title || "",
     description: initialData?.description || "",
     categoryId: initialData?.categoryId || "",
     priority: initialData?.priority || "medium",
-    dueDate: initialData?.dueDate ? formatDateInput(initialData.dueDate) : ""
+    dueDate: initialData?.dueDate ? formatDateInput(initialData.dueDate) : "",
+    address: initialData?.address || ""
   });
 
   const [errors, setErrors] = useState({});
@@ -70,12 +71,13 @@ const TaskForm = ({
       
       if (!initialData) {
         // Reset form for new tasks
-        setFormData({
+setFormData({
           title: "",
           description: "",
           categoryId: "",
           priority: "medium",
-          dueDate: ""
+          dueDate: "",
+          address: ""
         });
       }
     } catch (error) {
@@ -145,13 +147,20 @@ const TaskForm = ({
         </FormField>
       </div>
 
-      <FormField
+<FormField
         label="Due Date (Optional)"
         type="date"
         value={formData.dueDate}
         onChange={(e) => handleChange("dueDate", e.target.value)}
       />
 
+      <FormField
+        label="Address (Optional)"
+        type="text"
+        value={formData.address}
+        onChange={(e) => handleChange("address", e.target.value)}
+        placeholder="Enter task address"
+      />
       <div className="flex gap-3 pt-4">
         <Button
           type="submit"

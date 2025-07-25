@@ -14,7 +14,7 @@ export const taskService = {
       const apperClient = this.getApperClient();
       const params = {
         fields: [
-          { field: { Name: "Name" } },
+{ field: { Name: "Name" } },
           { field: { Name: "Tags" } },
           { field: { Name: "Owner" } },
           { field: { Name: "CreatedOn" } },
@@ -28,7 +28,8 @@ export const taskService = {
           { field: { Name: "completed_c" } },
           { field: { Name: "createdAt_c" } },
           { field: { Name: "completedAt_c" } },
-          { field: { Name: "categoryId_c" } }
+          { field: { Name: "categoryId_c" } },
+          { field: { Name: "address_c" } }
         ],
         orderBy: [
           {
@@ -51,7 +52,7 @@ export const taskService = {
       }
 
       // Transform database fields to UI field names for compatibility
-      return response.data.map(task => ({
+return response.data.map(task => ({
         Id: task.Id,
         title: task.title_c || '',
         description: task.description_c || '',
@@ -60,7 +61,8 @@ export const taskService = {
         dueDate: task.dueDate_c,
         completed: task.completed_c || false,
         createdAt: task.createdAt_c || task.CreatedOn,
-        completedAt: task.completedAt_c
+        completedAt: task.completedAt_c,
+        address: task.address_c || ''
       }));
     } catch (error) {
       if (error?.response?.data?.message) {
@@ -76,7 +78,7 @@ export const taskService = {
     try {
       const apperClient = this.getApperClient();
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
           { field: { Name: "Tags" } },
           { field: { Name: "Owner" } },
@@ -91,7 +93,8 @@ export const taskService = {
           { field: { Name: "completed_c" } },
           { field: { Name: "createdAt_c" } },
           { field: { Name: "completedAt_c" } },
-          { field: { Name: "categoryId_c" } }
+          { field: { Name: "categoryId_c" } },
+          { field: { Name: "address_c" } }
         ]
       };
 
@@ -102,7 +105,7 @@ export const taskService = {
       }
 
       const task = response.data;
-      return {
+return {
         Id: task.Id,
         title: task.title_c || '',
         description: task.description_c || '',
@@ -111,7 +114,8 @@ export const taskService = {
         dueDate: task.dueDate_c,
         completed: task.completed_c || false,
         createdAt: task.createdAt_c || task.CreatedOn,
-        completedAt: task.completedAt_c
+        completedAt: task.completedAt_c,
+        address: task.address_c || ''
       };
     } catch (error) {
       if (error?.response?.data?.message) {
@@ -129,7 +133,7 @@ export const taskService = {
       
       // Only include Updateable fields in create operation
       const params = {
-        records: [
+records: [
           {
             Name: taskData.title || '',
             Tags: taskData.tags || '',
@@ -140,7 +144,8 @@ export const taskService = {
             completed_c: false,
             createdAt_c: new Date().toISOString(),
             completedAt_c: null,
-            categoryId_c: parseInt(taskData.categoryId)
+            categoryId_c: parseInt(taskData.categoryId),
+            address_c: taskData.address || ''
           }
         ]
       };
@@ -169,7 +174,7 @@ export const taskService = {
         }
         
         if (successfulRecords.length > 0) {
-          const createdTask = successfulRecords[0].data;
+const createdTask = successfulRecords[0].data;
           return {
             Id: createdTask.Id,
             title: createdTask.title_c || '',
@@ -179,7 +184,8 @@ export const taskService = {
             dueDate: createdTask.dueDate_c,
             completed: createdTask.completed_c || false,
             createdAt: createdTask.createdAt_c || createdTask.CreatedOn,
-            completedAt: createdTask.completedAt_c
+            completedAt: createdTask.completedAt_c,
+            address: createdTask.address_c || ''
           };
         }
       }
@@ -198,8 +204,7 @@ export const taskService = {
   async update(id, updates) {
     try {
       const apperClient = this.getApperClient();
-      
-      // Only include Updateable fields in update operation
+// Only include Updateable fields in update operation
       const updateData = {
         Id: parseInt(id)
       };
@@ -223,6 +228,9 @@ export const taskService = {
       }
       if (updates.categoryId !== undefined) {
         updateData.categoryId_c = parseInt(updates.categoryId);
+      }
+      if (updates.address !== undefined) {
+        updateData.address_c = updates.address;
       }
 
       const params = {
@@ -254,7 +262,7 @@ export const taskService = {
         
         if (successfulUpdates.length > 0) {
           const updatedTask = successfulUpdates[0].data;
-          return {
+return {
             Id: updatedTask.Id,
             title: updatedTask.title_c || '',
             description: updatedTask.description_c || '',
@@ -263,7 +271,8 @@ export const taskService = {
             dueDate: updatedTask.dueDate_c,
             completed: updatedTask.completed_c || false,
             createdAt: updatedTask.createdAt_c || updatedTask.CreatedOn,
-            completedAt: updatedTask.completedAt_c
+            completedAt: updatedTask.completedAt_c,
+            address: updatedTask.address_c || ''
           };
         }
       }
@@ -324,7 +333,7 @@ export const taskService = {
     try {
       const apperClient = this.getApperClient();
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
           { field: { Name: "Tags" } },
           { field: { Name: "Owner" } },
@@ -339,10 +348,11 @@ export const taskService = {
           { field: { Name: "completed_c" } },
           { field: { Name: "createdAt_c" } },
           { field: { Name: "completedAt_c" } },
-          { field: { Name: "categoryId_c" } }
+          { field: { Name: "categoryId_c" } },
+          { field: { Name: "address_c" } }
         ],
         whereGroups: [
-          {
+{
             operator: "OR",
             subGroups: [
               {
@@ -360,6 +370,16 @@ export const taskService = {
                   {
                     fieldName: "description_c",
                     operator: "Contains", 
+                    values: [query]
+                  }
+                ],
+                operator: "OR"
+              },
+              {
+                conditions: [
+                  {
+                    fieldName: "address_c",
+                    operator: "Contains",
                     values: [query]
                   }
                 ],
@@ -382,7 +402,7 @@ export const taskService = {
         return [];
       }
 
-      return response.data.map(task => ({
+return response.data.map(task => ({
         Id: task.Id,
         title: task.title_c || '',
         description: task.description_c || '',
@@ -391,7 +411,8 @@ export const taskService = {
         dueDate: task.dueDate_c,
         completed: task.completed_c || false,
         createdAt: task.createdAt_c || task.CreatedOn,
-        completedAt: task.completedAt_c
+        completedAt: task.completedAt_c,
+        address: task.address_c || ''
       }));
     } catch (error) {
       if (error?.response?.data?.message) {

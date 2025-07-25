@@ -130,7 +130,7 @@ const TaskItem = ({
                 <PriorityBadge priority={task.priority} />
               </div>
 
-              {task.description && (
+{task.description && (
                 <p 
                   className={cn(
                     "text-gray-600 mb-3",
@@ -138,6 +138,18 @@ const TaskItem = ({
                   )}
                 >
                   {task.description}
+                </p>
+              )}
+
+              {task.address && (
+                <p 
+                  className={cn(
+                    "text-gray-500 text-sm mb-3 flex items-center gap-2",
+                    task.completed && "line-through text-gray-400"
+                  )}
+                >
+                  <ApperIcon name="MapPin" size={14} />
+                  {task.address}
                 </p>
               )}
 
